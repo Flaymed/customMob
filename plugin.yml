@@ -1,0 +1,9 @@
+name: customMobs
+description: Create custom mobs.
+author: Mark
+version: 1.0
+main: customMobs.Main
+commands:
+   createMob:
+      description: Create a mob
+      usage: /createMob
