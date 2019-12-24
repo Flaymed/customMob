@@ -7,3 +7,6 @@ commands:
    createMob:
       description: Create a mob
       usage: /createMob
+   test:
+      description: test command
+      usage: /test

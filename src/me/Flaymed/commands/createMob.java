@@ -11,6 +11,7 @@ import org.bukkit.entity.Skeleton;
 import org.bukkit.entity.Zombie;
 
 public class createMob implements CommandExecutor {
+	@SuppressWarnings("unused")
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player player = (Player) sender;
