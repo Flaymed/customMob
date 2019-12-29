@@ -7,6 +7,29 @@ commands:
    createMob:
       description: Create a mob
       usage: /createMob
-   test:
-      description: test command
-      usage: /test
+   damageOn:
+      description: Toggle damage for select entity on
+      usage: /damageOn
+   damageOff:
+      description: Toggle damage for select entity off
+      usage: /damageOff
+   armor:
+      description: Give a mob armor or remove it
+      usage: /armor
+   freeze:
+      description: Freeze a mob
+      usage: /freeze
+   unfreeze:
+      description: Unfreeze a mob
+      usage: /unfreeze
+   rename:
+      description: Rename a mob
+      usage: /rename	
+   nameon:
+      description: Toggle entity name on
+      usage: /nameon
+   nameoff:
+      description: Toggle entity name off
+      usage: /nameoff	
+      
+      
