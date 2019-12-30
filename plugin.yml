@@ -30,6 +30,14 @@ commands:
       usage: /nameon
    nameoff:
       description: Toggle entity name off
-      usage: /nameoff	
-      
+      usage: /nameoff
+   entities:
+      description: List all entities and their id
+      usage: /entities	
+   equip:
+      description: Equip an entity with an item
+      usage: /equip
+   deletemob:
+      description: Remove a mob from the world
+      usage: /deletemob
       

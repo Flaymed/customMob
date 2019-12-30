@@ -1,10 +1,8 @@
 package me.Flaymed.commands;
 
-import customMobs.mobManager;
-//import mobManager.equip;
+import customMobs.MobManager;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,9 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.EntityEquipment;
 import org.bukkit.inventory.ItemStack;
 
-public class armor implements CommandExecutor {
-	
-	String chatPrefix = ChatColor.GRAY + "[" + ChatColor.RED + "CustomMobs" + ChatColor.GRAY + "]" + ChatColor.YELLOW;
+public class Armor implements CommandExecutor {
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -26,9 +22,9 @@ public class armor implements CommandExecutor {
 			if(sender.hasPermission("mob.armor")) {
 				
 				//Identify Mob Variables
-				String name = args[0];
+				Integer id = Integer.parseInt(args[0]);
 				String armor = args[1].toLowerCase();
-				Entity creature = mobManager.getMob(name);
+				Entity creature = MobManager.getMob(id);
 				EntityEquipment equiped = ((LivingEntity) creature).getEquipment();
 				
 				switch (armor) {
@@ -103,11 +99,11 @@ public class armor implements CommandExecutor {
 					break;
 				}
 				
-				player.sendMessage(chatPrefix + " Mob armor updated!");
+				player.sendMessage(MobManager.chatPrefix + " Mob armor updated!");
 				
 					
 			} else {
-				player.sendMessage(chatPrefix + " You do not have permission to perform this command!");
+				player.sendMessage(MobManager.chatPrefix + " You do not have permission to perform this command!");
 			}
 		} else {
 			Bukkit.broadcastMessage("Only players can execute this command!");

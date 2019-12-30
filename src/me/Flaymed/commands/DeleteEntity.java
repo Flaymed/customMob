@@ -6,21 +6,27 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
-public class DamageOn implements CommandExecutor {
+public class DeleteEntity implements CommandExecutor {
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		Player player = (Player) sender;
  		if(sender instanceof Player) {
-			if(sender.hasPermission("mob.damage")) {
+			if(sender.hasPermission("mob.delete")) {
 				
 				//Identify Mob Variables
 				Integer id = Integer.parseInt(args[0]);
+				Entity creature = MobManager.getMob(id);
 				
+				MobManager.removeMob(id, creature);
+				MobManager.mobNames.remove(id);
 				MobManager.setMobDamageable(id);
-				player.sendMessage(MobManager.chatPrefix + " This entity can now take damage!");
+				creature.remove();
+				
+				player.sendMessage(MobManager.chatPrefix + " Mob deleted!");
 					
 			} else {
 				player.sendMessage(MobManager.chatPrefix + " You do not have permission to perform this command!");
